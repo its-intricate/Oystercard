@@ -53,3 +53,20 @@ I need my fare deducted from my card
 
 - card -> balance
 - card deduct - > balance --
+
+```
+In order to get through the barriers.
+As a customer
+I need to touch in and out.
+```
+
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Card   | x   | touch_in |
+|Card   | x   | touch_out |
+|Card   | x   | in_journey? |
+
+
+- card -> top_up
+- card -> touch_in  
+- card -> touch_out
