@@ -28,3 +28,16 @@ I want to add money to my card
 
 - new card -> balance 0
 - card top up - > balance ++
+
+```
+In order to protect my money from theft or loss
+As a customer
+I want a maximum limit (of £90) on my card
+```
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Card   | x   | maximum_balance|
+
+- MAX_BALANCE = 90
+- card -> balance 90
+- card top up - > fail
