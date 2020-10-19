@@ -70,3 +70,29 @@ I need to touch in and out.
 - card -> top_up
 - card -> touch_in  
 - card -> touch_out
+
+
+```
+In order to pay for my journey
+As a customer
+I need to have the minimum amount (£1) for a single journey.
+```
+
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Card   | x   | min_balance|
+
+- MIN_BALANCE = 1
+- card -> balance 1
+- card touch_in - > fail
+
+
+```
+In order to pay for my journey
+As a customer
+When my journey is complete, I need the correct amount deducted from my card
+```
+
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Card   | x   | touch_out -> deduct |

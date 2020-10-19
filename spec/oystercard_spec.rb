@@ -20,27 +20,35 @@ RSpec.describe Oystercard do
     end
   end
 
-  describe "#deduct" do
-    it "decreases balance by deduction amount" do
-      # subject.top_up(10)
-      expect{ subject.deduct(1) }.to change{ subject.balance }.by -1
-    end
-  end
-
   describe "#in_journey?" do
     it 'is initially not in a journey' do
       expect(subject).not_to be_in_journey
     end
-    it "touch in sets the card to in journey" do
-      # subject.top_up(10)
-      subject.touch_in
-      expect(subject).to be_in_journey
+    context "touch in" do
+      it "touch in sets the card to in journey" do
+        subject.top_up(10)
+        subject.touch_in
+        expect(subject).to be_in_journey
+      end
+      it "throws error if touch in when balance is below min" do
+        message = "Balance is too low: #{subject.balance}"
+        expect { subject.touch_in }.to raise_error(message)
+      end
     end
-    it "touch out sets the card to not in journey" do
-      # subject.top_up(10)
-      subject.touch_in
-      subject.touch_out
-      expect(subject).not_to be_in_journey
+    context "touch out" do
+      it "touch out sets the card to not in journey" do
+        subject.top_up(10)
+        subject.touch_in
+        subject.touch_out
+        expect(subject).not_to be_in_journey
+      end
+
+      it "touch out sets the card to not in journey" do
+        subject.top_up(10)
+        subject.touch_in
+        expect { subject.touch_out }.to change{ subject.balance }.by -1
+      end
     end
   end
+
 end
