@@ -19,4 +19,11 @@ RSpec.describe Oystercard do
       expect { subject.top_up(amount + 1) }.to raise_error(message)
     end
   end
+
+  describe "#deduct" do
+    it "decreases balance by deduction amount" do
+      # subject.top_up(10)
+      expect{ subject.deduct(1) }.to change{ subject.balance }.by -1
+    end
+  end
 end

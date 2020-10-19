@@ -41,3 +41,15 @@ I want a maximum limit (of £90) on my card
 - MAX_BALANCE = 90
 - card -> balance 90
 - card top up - > fail
+
+```
+In order to pay for my journey
+As a customer
+I need my fare deducted from my card
+```
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Card   | x   | deduct |
+
+- card -> balance
+- card deduct - > balance --
