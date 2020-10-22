@@ -110,3 +110,16 @@ I need to know where I've travelled from
 - card -> touch_in
 - touch_in -> sets entry_station
 - if entry_station exist -> in_journey
+
+```
+In order to know where I have been
+As a customer
+I want to see all my previous trips
+```
+
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Card   | x   | touch_out -> saves journey|
+
+- touch_out -> saves journey as a hash within an ordered array
+- hash includes entry station and exit station
