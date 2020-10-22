@@ -123,3 +123,14 @@ I want to see all my previous trips
 
 - touch_out -> saves journey as a hash within an ordered array
 - hash includes entry station and exit station
+
+```
+In order to know how far I have travelled
+As a customer
+I want to know what zone a station is in
+```
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Station  | x   | name, zone|
+
+- instance: name and zone in class 
