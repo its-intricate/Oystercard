@@ -11,7 +11,7 @@ station = Station.new("London Bridge", 2)
     it "displays station zone" do
       expect(station.zone).to eq 2
     end
-
+    
   end
 
 end

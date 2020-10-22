@@ -133,4 +133,18 @@ I want to know what zone a station is in
 |:----:|:----:|:----:|
 |Station  | x   | name, zone|
 
-- instance: name and zone in class 
+- instance: name and zone in class
+
+```
+In order to be charged correctly
+As a customer
+I need a penalty charge deducted if I fail to touch in or out
+```
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Jouney  | x   | complete, fare, finish|
+
+- penalty of 6 if either no touch in nor touch out
+- charge correct fare based on zones
+- it should be responsible for starting a journey,
+- returning whether or not the journey is complete.
