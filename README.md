@@ -1,7 +1,7 @@
 # OysterCard Challenge
 
 
-## First user story
+## User stories
 
 ```
 In order to use public transport
@@ -11,10 +11,9 @@ I want money on my card
 
 |Object |  x  | Message |
 |:----:|:----:|:----:|
-|Card   | x   | has_money|
-|Money  | x   | exists |
+|Card   | x   | balance|
 
-
+- new card -> balance 0
 
 ```
 In order to keep using public transport
@@ -26,7 +25,6 @@ I want to add money to my card
 |:----:|:----:|:----:|
 |Card   | x   | top up|
 
-- new card -> balance 0
 - card top up - > balance ++
 
 ```
@@ -83,7 +81,7 @@ I need to have the minimum amount (£1) for a single journey.
 |Card   | x   | min_balance|
 
 - MIN_BALANCE = 1
-- card -> balance 1
+- card -> balance 0
 - card touch_in - > fail
 
 
@@ -96,3 +94,19 @@ When my journey is complete, I need the correct amount deducted from my card
 |Object |  x  | Message |
 |:----:|:----:|:----:|
 |Card   | x   | touch_out -> deduct |
+
+- card touch_out - > deduct 1 from balance
+
+```
+In order to pay for my journey
+As a customer
+I need to know where I've travelled from
+```
+|Object |  x  | Message |
+|:----:|:----:|:----:|
+|Card   | x   | touch_in -> sets @entry_station|
+|Card   | x   | touch_out -> removes @entry_station|
+
+- card -> touch_in
+- touch_in -> sets entry_station
+- if entry_station exist -> in_journey
